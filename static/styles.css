@@ -39,6 +39,9 @@ body {
     color: var(--c-text-main);
     padding: 20px;
     margin: 0;
+
+    -webkit-appearance: none; /* Required for pywebview/WebKit */
+    appearance: none;
 }
 
 h1, h2, h3 {
@@ -84,7 +87,7 @@ input:focus, select:focus, button:focus {
     line-height: 1; /* Keeps line height tight to the text */
 }
 
-.weapon-atk-meta > div:last-child {
+.-meta > div:last-child {
     border-right: none; /* Remove line from last item */
     margin-right: 0;
 }
@@ -241,6 +244,9 @@ input:focus, select:focus, button:focus {
     color: white;
     border-radius: 4px;
     text-align: center;
+
+    -webkit-appearance: none; /* Required for pywebview/WebKit */
+    appearance: none;
 }
 
 /* Specific Input Tweaks */

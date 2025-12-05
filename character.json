@@ -472,19 +472,6 @@
             "source": null,
             "stat": "cha",
             "type": "spell_save"
-        },
-        {
-            "name": "Hex",
-            "source": null,
-            "notes": "If the target drops to 0 Hit Points before this spell ends, you can take a Bonus Action on a later turn to curse a new creature.",
-            "type": "utility",
-            "level": "1",
-            "stat": "cha",
-            "range": "90ft",
-            "duration": "Instatnt",
-            "damage": "1d6 Necrotic",
-            "action": "Bonus Action",
-            "proficient": false
         }
     ],
     "stats": {
@@ -498,15 +485,15 @@
     "subclass": "Great Old One",
     "weapons": [
         {
-            "action": "Action",
-            "damage": "1d4 Piercing",
-            "duration": "",
             "name": "Dagger Stab",
-            "notes": "",
-            "range": "Melee",
             "source": "Dagger",
+            "notes": "",
+            "type": "weapon_melee",
             "stat": "dex",
-            "type": "weapon_melee"
+            "range": "Melee",
+            "damage": "1d4 Piercing",
+            "action": "Action",
+            "proficient": true
         },
         {
             "action": "Action",
@@ -529,17 +516,6 @@
             "source": "Dagger",
             "stat": "dex",
             "type": "weapon_range"
-        },
-        {
-            "action": "Action",
-            "damage": "1d4 Piercing",
-            "name": "Dagger Stab",
-            "notes": "",
-            "proficient": false,
-            "range": "Melee",
-            "source": "Dagger",
-            "stat": "dex",
-            "type": "weapon_melee"
         }
     ]
 }

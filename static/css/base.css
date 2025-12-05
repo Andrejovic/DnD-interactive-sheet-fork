@@ -1,0 +1,59 @@
+/* --- RESET & TYPOGRAPHY --- */
+body {
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+    background: var(--c-bg-main);
+    color: var(--c-text-main);
+    padding: 20px;
+    margin: 0;
+    -webkit-appearance: none; appearance: none;
+}
+
+h1, h2, h3, h4 { margin: 0; }
+a { text-decoration: none; }
+
+/* Scrollbars */
+.scroll-y { overflow-y: auto; padding-right: 5px; }
+.scroll-y::-webkit-scrollbar { width: 8px; }
+.scroll-y::-webkit-scrollbar-track { background: var(--c-bg-card); border-radius: 4px; }
+.scroll-y::-webkit-scrollbar-thumb { background: var(--c-border-light); border-radius: 4px; }
+
+/* --- UTILITIES --- */
+/* Flexbox */
+.flex-row { display: flex; justify-content: space-between; align-items: center; }
+.flex-end { display: flex; justify-content: flex-end; gap: 10px; }
+.flex-gap-10 { display: flex; gap: 10px; }
+.flex-gap-6 { display: flex; gap: 6px; }
+.flex-center-y { display: flex; align-items: center; }
+
+/* Grid */
+.grid-2-col { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.grid-3-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+.grid-gap-10 { display: flex; flex-direction: column; gap: 10px; } /* Fallback or vertical stack */
+
+/* Spacing & Visibility */
+.mt-30 { margin-top: 30px; }
+.mb-15 { margin-bottom: 15px; }
+.hidden { display: none !important; }
+.text-center { text-align: center; }
+
+/* Colors & Text */
+.text-purple { color: var(--c-purple-light); }
+.text-blue { color: var(--c-blue-light); }
+.text-gray { color: var(--c-text-muted); }
+.text-light-gray { color: var(--c-text-main); }
+.text-gold { color: var(--c-gold); }
+.text-bold { font-weight: bold; }
+.text-small { font-size: 0.8em; }
+.text-muted { color: var(--c-text-muted); font-size: 0.9em; }
+.text-giant { font-size: 1.8em; }
+
+/* Borders */
+.border-btm { border-bottom: 2px solid var(--c-border); }
+.border-purple { border-color: var(--c-purple); }
+.border-blue { border-color: var(--c-blue); }
+
+/* Links */
+.link-styled { text-decoration: none; transition: color 0.2s; color: var(--c-link); }
+.link-styled:hover { text-decoration: underline; color: var(--c-link-hover); }
+.link-styled::after { content: " ↗"; font-size: 0.7em; opacity: 0.5; color: var(--c-link); }
+.link-purple { color: var(--c-purple-light); }

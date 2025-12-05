@@ -1,0 +1,52 @@
+/* --- LAYOUT GRID --- */
+.main-layout { display: grid; grid-template-columns: 2fr 3fr; gap: 30px; max-width: 1600px; margin: 0 auto; }
+.header { background: var(--c-bg-card); padding: 20px; border-radius: 8px; border: 1px solid var(--c-border); margin-bottom: 20px; }
+
+/* --- HEADER IDENTITY --- */
+.identity-row { align-items: flex-end; padding-bottom: 10px; }
+.char-name { margin-bottom: 5px; }
+.char-separator { margin: 0 10px; }
+.input-level { width: 35px; }
+.input-magic { width: 50px; font-weight: bold; font-size: 1.2em; }
+.header-bonuses { display: flex; justify-content: flex-end; gap: 15px; }
+
+/* --- COMBAT HUD --- */
+.combat-hud { display: flex; gap: 10px; flex-wrap: wrap; align-items: stretch; }
+.hud-box {
+    background: var(--c-bg-element);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius);
+    padding: 8px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    flex: 1; min-width: 70px;
+}
+.hud-label { font-size: 0.65em; color: var(--c-text-muted); letter-spacing: 1px; margin-bottom: 5px; font-weight: bold; text-align: center; white-space: nowrap; }
+.hp-box { min-width: 150px; flex: 1.5; border-color: var(--c-border-light); }
+
+/* Death Saves */
+.death-row { display: flex; align-items: center; margin-bottom: 4px; }
+.check-group { display: flex; gap: 5px; margin-left: 10px; }
+input[type="checkbox"] {
+    appearance: none; width: 14px; height: 14px; border: 1px solid #555; border-radius: 50%; background: #222; cursor: pointer;
+}
+input[type="checkbox"]:checked { background: var(--c-red); border-color: var(--c-red); box-shadow: 0 0 5px var(--c-red); }
+/* Success Green Override */
+#ds-succ-1:checked, #ds-succ-2:checked, #ds-succ-3:checked { background: var(--c-green); border-color: var(--c-green); box-shadow: 0 0 5px var(--c-green); }
+
+/* --- STATS GRID --- */
+.stats-container { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; align-content: start; }
+.card { background: var(--c-bg-card); border: 1px solid var(--c-border); border-radius: var(--radius); padding: 12px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); }
+
+.stat-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--c-border-light); padding-bottom: 8px; margin-bottom: 8px; }
+.stat-mod { font-size: 1.8em; font-weight: bold; color: #fff; }
+.stat-name { font-size: 0.75em; text-transform: uppercase; letter-spacing: 1px; color: var(--c-text-muted); }
+
+.save-row { margin-top: 8px; padding-top: 8px; border-top: 1px dashed var(--c-border-light); display: flex; justify-content: space-between; font-weight: bold; color: var(--c-purple-light); }
+.roll-val { cursor: pointer; color: var(--c-green-light); font-weight: bold; width: 30px; text-align: right; }
+.roll-val:hover { color: var(--c-green); text-decoration: underline; }
+
+/* Skills */
+.skill-row { padding: 4px 0; border-bottom: 1px solid #2a2a2a; font-size: 0.9em; display: flex; justify-content: space-between; align-items: center; }
+.skill-row:last-child { border-bottom: none; }
+.skill-row:hover { background: var(--c-bg-element); }
+.skill-select { background: #222; color: var(--c-text-muted); border: 1px solid var(--c-border-light); border-radius: 3px; font-size: 0.7em; padding: 1px; height: 20px; }

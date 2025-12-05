@@ -1,0 +1,33 @@
+:root {
+    /* --- PALETTE --- */
+    --c-bg-main: #121212;
+    --c-bg-card: #1e1e1e;
+    --c-bg-element: #252525;
+    --c-bg-input: #2d2d2d;
+
+    --c-border: #333;
+    --c-border-light: #555;
+
+    --c-text-main: #e0e0e0;
+    --c-text-muted: #888;
+
+    --c-link: #a29bfe;
+    --c-link-hover: #74b9ff;
+
+    /* Accents */
+    --c-purple: #6c5ce7;
+    --c-purple-light: #a29bfe;
+    --c-blue: #0984e3;
+    --c-blue-light: #74b9ff;
+    --c-green: #00ee28;
+    --c-green-light: #39e773;
+    --c-red: #e17055;
+    --c-gold: #ffc400;
+    --c-gold-light: #ffeaa7;
+    --c-cyan: #00cec9;
+    --c-gray: #b2bec3;
+
+    /* Sizing */
+    --radius: 6px;
+    --spell-list-height: 600px;
+}

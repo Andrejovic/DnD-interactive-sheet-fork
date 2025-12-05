@@ -1,0 +1,69 @@
+/* --- LIST CARDS --- */
+#spellsList, #itemsList, #featsList { max-height: var(--spell-list-height); margin-bottom: 20px; }
+
+.list-card {
+    background: var(--c-bg-element);
+    padding: 10px 12px;
+    border-radius: var(--radius);
+    margin-bottom: 10px;
+    display: flex; justify-content: space-between; align-items: center;
+    border-left: 4px solid var(--c-gray); /* Default Color */
+}
+/* Color Variants */
+.list-card.combat { border-left-color: var(--c-purple-light); }
+.list-card.save { border-left-color: var(--c-red); }
+.list-card.feat { border-left-color: var(--c-blue); }
+.list-card.utility { border-left-color: var(--c-cyan); }
+.list-card.item { border-left-color: var(--c-gold); }
+.list-card.weapon { border-left-color: var(--c-gray); }
+
+/* Missing Source Warning */
+.list-card.missing-source { opacity: 0.5; border-left-color: #444 !important; background: repeating-linear-gradient(45deg, #252525, #252525 10px, #2a2a2a 10px, #2a2a2a 20px); }
+.missing-badge { background: #ff5252; color: white; font-size: 0.7em; padding: 2px 5px; border-radius: 4px; margin-right: 5px; font-weight: bold; }
+
+/* Badges & Meta */
+.badge-save { background: var(--c-red); color: black; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 0.9em; }
+.lvl-badge { font-size: 0.7em; font-weight: bold; padding: 2px 6px; border-radius: 4px; margin-right: 6px; border: 1px solid; text-transform: uppercase; display: inline-block; vertical-align: middle; }
+.lvl-0 { color: var(--c-green-light); border-color: var(--c-green-light); background: rgba(129, 236, 236, 0.1); }
+.lvl-n { color: var(--c-purple-light); border-color: var(--c-purple-light); background: rgba(162, 155, 254, 0.1); }
+
+/* Refactored Meta Row (Merges Spell and Weapon meta) */
+.spell-meta, .weapon-atk-meta { display: flex; align-items: center; }
+.spell-meta > div, .weapon-atk-meta > div { padding-right: 10px; margin-right: 10px; border-right: 1px solid #ccc; line-height: 1; }
+.spell-meta > div:last-child, .weapon-atk-meta > div:last-child { border-right: none; margin-right: 0; }
+.dmg-text { color: var(--c-text-main); margin-top: 4px; }
+
+/* --- SPELL DASHBOARD --- */
+.spell-dash { background: var(--c-bg-element); border-radius: var(--radius); padding: 15px; margin-bottom: 20px; border: 1px solid var(--c-border); }
+.spell-stats-row { display: flex; justify-content: space-between; margin-bottom: 15px; gap: 10px; text-align: center; }
+.spell-stat-box { background: var(--c-bg-card); border: 1px solid var(--c-border-light); border-radius: 4px; padding: 8px; flex: 1; }
+.spell-stat-val { font-size: 1.4em; font-weight: bold; color: var(--c-purple-light); }
+
+.slot-row { display: flex; align-items: center; justify-content: space-between; background: var(--c-bg-card); margin-bottom: 4px; padding: 4px 8px; border-radius: 4px; }
+.slot-bubble { width: 14px; height: 14px; border-radius: 50%; border: 1px solid var(--c-purple); background: transparent; cursor: pointer; display: inline-block; margin-left: 5px; }
+.slot-bubble.used { background: var(--c-purple); box-shadow: 0 0 5px var(--c-purple); }
+
+/* --- FEATURES (Invocations, Coins, Attunement) --- */
+/* Invocations */
+.invoc-container { display: flex; flex-wrap: wrap; gap: 10px; }
+.invoc-tag { background: #2d3436; border: 1px solid var(--c-blue); border-radius: 20px; padding: 6px 12px; display: inline-flex; align-items: center; gap: 8px; position: relative; transition: background 0.2s; }
+.invoc-tag:hover { background: #353b48; z-index: 1000; }
+.invoc-name { color: var(--c-blue-light); font-weight: bold; font-size: 0.9em; cursor: help; }
+.invoc-desc { visibility: hidden; opacity: 0; position: absolute; bottom: 100%; background-color: var(--c-bg-card); color: #dfe6e9; text-align: left; border: 1px solid var(--c-blue-light); border-radius: 6px; padding: 10px; width: 600px; max-width: 90vw; z-index: 2000; max-height: 400px; overflow-y: auto; pointer-events: auto; font-size: 0.85em; white-space: pre-wrap; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); }
+.invoc-tag:hover .invoc-desc { visibility: visible; opacity: 1; }
+
+/* Coins */
+.coin-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(60px, 1fr)); gap: 10px; margin-bottom: 30px; }
+.coin-box { background: var(--c-bg-card); border: 1px solid var(--c-border); border-radius: 6px; padding: 8px 4px; text-align: center; border-top: 3px solid #555; }
+.coin-box.cp { border-top-color: var(--c-red); }
+.coin-box.sp { border-top-color: var(--c-gray); }
+.coin-box.ep { border-top-color: var(--c-blue-light); }
+.coin-box.gp { border-top-color: var(--c-gold-light); }
+.coin-box.pp { border-top-color: var(--c-purple-light); }
+.coin-label { font-size: 0.8em; font-weight: bold; color: var(--c-text-muted); text-transform: uppercase; margin-bottom: 5px; }
+
+/* Attunement */
+.attunement-row { display: flex; align-items: center; background: var(--c-bg-card); border: 1px solid var(--c-border); border-radius: 4px; padding: 5px; margin-bottom: 8px; transition: border-color 0.2s; }
+.attunement-row.active { border-color: var(--c-red); background: var(--c-bg-input); }
+.attunement-icon { width: 24px; text-align: center; font-size: 1.2em; color: var(--c-text-muted); margin-right: 10px; }
+.attunement-row.active .attunement-icon { color: var(--c-red); text-shadow: 0 0 5px rgba(225, 112, 85, 0.5); }

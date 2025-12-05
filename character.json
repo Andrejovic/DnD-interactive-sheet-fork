@@ -60,21 +60,15 @@
             "type": "item"
         },
         {
-            "id": "id_6bbrir4r4",
-            "name": "Dagger",
-            "notes": "2 kusy + 1 in body",
-            "type": "item"
-        },
-        {
             "id": "id_ykhinpv96",
             "name": "Sickle",
             "notes": "in my body ",
             "type": "item"
         },
         {
-            "id": "id_flzoajhio",
             "name": "Alien rifle",
-            "notes": "",
+            "source": null,
+            "notes": "pokus",
             "type": "item"
         },
         {
@@ -485,26 +479,26 @@
     "subclass": "Great Old One",
     "weapons": [
         {
-            "name": "Dagger Stab",
-            "source": "Dagger",
-            "notes": "",
-            "type": "weapon_melee",
-            "stat": "dex",
-            "range": "Melee",
-            "damage": "1d4 Piercing",
             "action": "Action",
-            "proficient": true
+            "damage": "1d4 Piercing",
+            "name": "Dagger Stab",
+            "notes": "",
+            "proficient": true,
+            "range": "Melee",
+            "source": "Dagger",
+            "stat": "dex",
+            "type": "weapon_melee"
         },
         {
-            "action": "Action",
-            "damage": "1d4 Slashing",
-            "duration": "",
             "name": "Sickle Slash",
-            "notes": "",
-            "range": "Melee",
             "source": "Sickle",
+            "notes": "",
+            "type": "weapon_melee",
             "stat": "str",
-            "type": "weapon_melee"
+            "range": "Melee",
+            "damage": "1d4 Slashing",
+            "action": "Action",
+            "proficient": false
         },
         {
             "action": "Action",

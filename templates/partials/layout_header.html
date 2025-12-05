@@ -1,0 +1,71 @@
+<div class="header">
+    <div class="identity-row flex-row border-btm mb-15">
+        <div>
+            <h1 id="charName" class="char-name text-purple">...</h1>
+            <div class="text-gray">
+                <span id="charSpecies">...</span>
+                <span class="char-separator text-purple">•</span>
+                Level <input type="number" id="lvlInput" class="stat-input input-level" onchange="updateVal('level', this.value)"/>
+                <span id="charSubclass">...</span> <span id="charClass">...</span>
+            </div>
+        </div>
+    
+        <div class="header-bonuses">
+            <div class="text-center">
+                <div class="text-small text-gray">MAGIC ITEM</div>
+                <input type="number" id="magicBonusInput" class="stat-input input-magic text-purple border-purple" onchange="updateVal('magic_bonus', this.value)"/>
+            </div>
+            <div class="text-center">
+                <div class="text-small text-gray">PROFICIENCY</div>
+                <div id="pbDisplay" class="text-purple text-bold text-giant">+0</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="combat-hud">
+        <div class="hud-box">
+            <div class="hud-label">ARMOR</div>
+            <input type="number" id="acInput" class="hud-input" onchange="updateVal('armor_class', this.value)">
+        </div>
+        <div class="hud-box">
+            <div class="hud-label">INIT</div>
+            <input type="number" id="initInput" class="hud-input" onchange="updateVal('initiative', this.value)">
+        </div>
+        <div class="hud-box">
+            <div class="hud-label">SPEED</div>
+            <input type="text" id="speedInput" class="hud-input" style="width:60px;" onchange="updateText('speed', this.value)">
+        </div>
+        <div class="hud-box">
+            <div class="hud-label">SIZE</div>
+            <input type="text" id="sizeInput" class="hud-input" style="width:60px;" onchange="updateText('size', this.value)">
+        </div>
+        <div class="hud-box hp-box">
+            <div class="hud-label">HIT POINTS</div>
+            <div class="flex-row">
+                <input type="number" id="hpCurr" class="hp-input" placeholder="Curr" onchange="updateVal('hp_current', this.value)">
+                <span style="color:#555">/</span>
+                <input type="number" id="hpMax" class="hp-input" placeholder="Max" onchange="updateVal('hp_max', this.value)">
+            </div>
+            <div class="text-small text-gray" style="margin-top:2px;">Hit Dice: <span id="hitDiceDisplay"></span></div>
+        </div>
+        <div class="hud-box" style="align-items:flex-start;">
+            <div class="hud-label">DEATH SAVES</div>
+            <div class="death-row">
+                <span class="text-small text-gray" style="width:40px;">SUCC</span>
+                <div class="check-group">
+                    <input type="checkbox" id="ds-succ-1" onchange="updateDeathSave()">
+                    <input type="checkbox" id="ds-succ-2" onchange="updateDeathSave()">
+                    <input type="checkbox" id="ds-succ-3" onchange="updateDeathSave()">
+                </div>
+            </div>
+            <div class="death-row">
+                <span class="text-small text-gray" style="width:40px;">FAIL</span>
+                <div class="check-group">
+                    <input type="checkbox" id="ds-fail-1" onchange="updateDeathSave()">
+                    <input type="checkbox" id="ds-fail-2" onchange="updateDeathSave()">
+                    <input type="checkbox" id="ds-fail-3" onchange="updateDeathSave()">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

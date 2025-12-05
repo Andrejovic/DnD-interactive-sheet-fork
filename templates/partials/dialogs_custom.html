@@ -1,0 +1,38 @@
+<dialog id="addFeatDialog">
+    <h3 class="text-blue mb-15">Add New Feat</h3>
+    <div class="grid-gap-10">
+        <input type="text" id="newFeatName" placeholder="Feat Name (e.g. Spell Sniper)" class="dark-input">
+        <select id="newFeatSource" class="dark-input">
+            <option value="">- Innate / No Source -</option>
+        </select>
+        <input type="text" id="newFeatNotes" placeholder="Short description..." class="dark-input">
+        <div class="flex-end mt-30">
+            <button onclick="document.getElementById('addFeatDialog').close()" class="btn btn-cancel">Cancel</button>
+            <button id="featSubmitBtn" onclick="commitFeat()" class="btn btn-primary bg-blue">Add</button>
+        </div>
+    </div>
+</dialog>
+
+<dialog id="addInvocDialog">
+    <h3 class="text-blue mb-15">Add New Invocation</h3>
+    <div class="grid-gap-10">
+        <div class="form-group">
+            <label for="newInvocName">Invocation Name</label>
+            <input type="text" id="newInvocName" class="dark-input" placeholder="e.g. Agonizing Blast" autocomplete="off">
+        </div>
+
+        <div class="form-group">
+            <label for="newInvocDesc">Description</label>
+            <textarea id="newInvocDesc" class="dark-input" rows="4" placeholder="When you cast eldritch blast..."></textarea>
+        </div>
+    </div>
+
+    <div class="flex-end mt-30">
+        <button type="button" class="btn btn-cancel" onclick="document.getElementById('addInvocDialog').close()">
+            Cancel
+        </button>
+        <button type="button" class="btn btn-primary bg-blue" onclick="commitInvoc()">
+            Save Invocation
+        </button>
+    </div>
+</dialog>

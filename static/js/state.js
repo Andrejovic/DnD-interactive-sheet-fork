@@ -77,6 +77,14 @@ export class CharacterState {
         this.save();
     }
 
+    updateIdentity(name, charClass, subclass, species) {
+        this.data.name = name;
+        this.data.class = charClass;
+        this.data.subclass = subclass;
+        this.data.species = species;
+        this.save();
+    }
+
     toggleSpellSlot(level, index) {
         if (!this.data.spell_info?.slots) return;
         const slotData = this.data.spell_info.slots[level];

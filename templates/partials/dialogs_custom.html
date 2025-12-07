@@ -37,6 +37,37 @@
     </div>
 </dialog>
 
+<dialog id="identityDialog">
+    <h3 class="text-blue mb-15">Edit Identity</h3>
+    <div class="grid-gap-10">
+        <div class="form-group">
+            <label for="idName" class="text-small text-gray">Character Name</label>
+            <input type="text" id="idName" class="dark-input">
+        </div>
+
+        <div class="grid-2-col">
+            <div class="form-group">
+                <label for="idClass" class="text-small text-gray">Class</label>
+                <input type="text" id="idClass" class="dark-input">
+            </div>
+            <div class="form-group">
+                <label for="idSubclass" class="text-small text-gray">Subclass</label>
+                <input type="text" id="idSubclass" class="dark-input">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="idSpecies" class="text-small text-gray">Species</label>
+            <input type="text" id="idSpecies" class="dark-input">
+        </div>
+
+        <div class="flex-end mt-30">
+            <button onclick="document.getElementById('identityDialog').close()" class="btn btn-cancel">Cancel</button>
+            <button onclick="window.app.modals.commitIdentity()" class="btn btn-primary bg-blue">Save</button>
+        </div>
+    </div>
+</dialog>
+
 <dialog id="spellSlotsDialog" style="width: 350px;">
     <h3 class="text-purple mb-15">Manage Spell Slots</h3>
     

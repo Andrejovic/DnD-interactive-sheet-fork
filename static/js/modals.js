@@ -137,6 +137,28 @@ export class ModalHandler {
         document.getElementById('spellSlotsDialog').close();
     }
 
+    openIdentity() {
+        const d = this.state.data;
+        document.getElementById('idName').value = d.name || "";
+        document.getElementById('idClass').value = d.class || "";
+        document.getElementById('idSubclass').value = d.subclass || "";
+        document.getElementById('idSpecies').value = d.species || "";
+        
+        document.getElementById('identityDialog').showModal();
+    }
+
+    commitIdentity() {
+        const name = document.getElementById('idName').value;
+        const charClass = document.getElementById('idClass').value;
+        const subclass = document.getElementById('idSubclass').value;
+        const species = document.getElementById('idSpecies').value;
+
+        if (!name) return alert("Name is required!");
+
+        this.state.updateIdentity(name, charClass, subclass, species);
+        document.getElementById('identityDialog').close();
+    }
+
     // --- INTERNAL HELPERS ---
     _setupDialog(mode, isEditing) {
         document.getElementById('actModalTitle').innerText = isEditing ? `Edit ${mode}` : `Add ${mode}`;

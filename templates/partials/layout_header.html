@@ -1,7 +1,10 @@
 <div class="header">
     <div class="identity-row flex-row border-btm mb-15">
         <div>
-            <h1 id="charName" class="char-name text-purple">...</h1>
+            <div class="flex-row" style="justify-content: flex-start; gap: 10px;">
+                <h1 id="charName" class="char-name text-purple">...</h1>
+                <button class="edit-btn btn" onclick="window.app.modals.openIdentity()" title="Edit Identity" style="font-size: 1rem; align-self: center;">✎</button>
+            </div>
             <div class="text-gray">
                 <span id="charSpecies">...</span>
                 <span class="char-separator text-purple">•</span>

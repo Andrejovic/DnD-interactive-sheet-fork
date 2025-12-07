@@ -17,6 +17,7 @@ export class SheetRenderer {
         this.renderSpellDashboard(data);
         this.renderCoins(data);
         this.renderLists(data);
+        this.renderLanguages(data);
         this.renderInvocations(data);
         this.renderAttunement(data);
     }
@@ -194,6 +195,22 @@ export class SheetRenderer {
                 spellsCont.appendChild(this.createCardNew(item.spell, 'spell', item.index));
             });
         }
+    }
+
+    renderLanguages(data) {
+        const cont = document.getElementById('languagesList');
+        cont.innerHTML = '';
+        if (!data.languages) return;
+
+        data.languages.forEach((lang, index) => {
+            const tag = document.createElement('div');
+            tag.className = 'lang-tag';
+            tag.innerHTML = `
+                <span>${lang}</span>
+                <span class="lang-delete" onclick="window.app.deleteEntry(${index}, 'language')">&times;</span>
+            `;
+            cont.appendChild(tag);
+        });
     }
 
     createCardNew(data, category, index) {

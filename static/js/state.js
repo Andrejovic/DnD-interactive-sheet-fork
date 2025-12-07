@@ -99,6 +99,12 @@ export class CharacterState {
         this.save();
     }
 
+    addLanguage(name) {
+        if(!this.data.languages) this.data.languages = [];
+        this.data.languages.push(name);
+        this.save();
+    }
+
     deleteItem(index, category) {
         // Categories: 'item' (inventory), 'weapon', 'spell', 'feat', 'invocation'
         let list = null;
@@ -107,6 +113,7 @@ export class CharacterState {
         else if (category === 'spell') list = this.data.spells;
         else if (category === 'feat') list = this.data.feats;
         else if (category === 'invocation') list = this.data.invocations;
+        else if (category === 'language') list = this.data.languages;
 
         if (list) {
             list.splice(index, 1);

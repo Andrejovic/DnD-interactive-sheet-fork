@@ -67,3 +67,39 @@
 .attunement-row.active { border-color: var(--c-red); background: var(--c-bg-input); }
 .attunement-icon { width: 24px; text-align: center; font-size: 1.2em; color: var(--c-text-muted); margin-right: 10px; }
 .attunement-row.active .attunement-icon { color: var(--c-red); text-shadow: 0 0 5px rgba(225, 112, 85, 0.5); }
+
+.lang-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.lang-tag {
+    background: #2d3436;
+    border: 1px solid var(--c-cyan);
+    border-radius: 4px;
+    padding: 4px 10px;
+    color: var(--c-cyan);
+    font-size: 0.9em;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s;
+}
+
+.lang-tag:hover {
+    background: rgba(0, 206, 201, 0.1);
+}
+
+.lang-delete {
+    cursor: pointer;
+    color: #555;
+    font-size: 1.1em;
+    line-height: 1;
+}
+
+.lang-delete:hover {
+    color: var(--c-red);
+}

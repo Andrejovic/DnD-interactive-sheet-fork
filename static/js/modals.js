@@ -159,6 +159,19 @@ export class ModalHandler {
         document.getElementById('identityDialog').close();
     }
 
+    openAddLanguage() {
+        document.getElementById('newLangName').value = '';
+        document.getElementById('addLanguageDialog').showModal();
+    }
+
+    commitLanguage() {
+        const name = document.getElementById('newLangName').value;
+        if (!name) return alert("Language name is required!");
+        
+        this.state.addLanguage(name);
+        document.getElementById('addLanguageDialog').close();
+    }
+
     // --- INTERNAL HELPERS ---
     _setupDialog(mode, isEditing) {
         document.getElementById('actModalTitle').innerText = isEditing ? `Edit ${mode}` : `Add ${mode}`;

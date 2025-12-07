@@ -139,4 +139,4 @@ if __name__ == '__main__':
     # We start the GUI. 
     # This blocks the code here until the window is closed.
     # Once closed, it automatically kills the Flask server and exits.
-    webview.start()
+    webview.start(debug=True)

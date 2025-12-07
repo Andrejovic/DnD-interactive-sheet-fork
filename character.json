@@ -495,5 +495,10 @@
             "stat": "dex",
             "type": "weapon_range"
         }
+    ],
+    "languages": [
+        "Deep speech",
+        "Egyptian",
+        "Common"
     ]
 }

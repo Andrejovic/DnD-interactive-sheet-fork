@@ -82,6 +82,73 @@ export class ModalHandler {
         document.getElementById('newInvocDesc').value = '';
     }
 
+    openSpellSlots() {
+        const container = document.getElementById('slotRowsContainer');
+        container.innerHTML = '';
+
+        const slots = this.state.data.spell_info?.slots || {};
+        const levels = Object.keys(slots).sort((a,b) => parseInt(a) - parseInt(b));
+
+        if (levels.length === 0) {
+            this.addSlotRow(1, 0);
+        } else {
+            levels.forEach(lvl => {
+                this.addSlotRow(lvl, slots[lvl].total);
+            });
+        }
+
+        document.getElementById('spellSlotsDialog').showModal();
+    }
+
+    addSlotRow(level = 1, count = 1) {
+        const container = document.getElementById('slotRowsContainer');
+        const rowId = Utils.generateId();
+        
+        const row = document.createElement('div');
+        row.className = 'flex-row';
+        row.style.background = '#252525';
+        row.style.padding = '5px';
+        row.style.borderRadius = '4px';
+        row.id = rowId;
+
+        let options = '';
+        for(let i=1; i<=9; i++) {
+            options += `<option value="${i}" ${parseInt(level) === i ? 'selected' : ''}>Level ${i}</option>`;
+        }
+        
+        // HTML Structure
+        row.innerHTML = `
+            <select class="dark-input slot-level-select" style="width:100px; margin:0;">
+                ${options}
+            </select>
+            <input type="number" class="dark-input slot-count-input" value="${count}" min="0" style="width:60px; margin:0;">
+            <button class="btn btn-delete" style="margin-left:5px;">&times;</button>
+        `;
+
+        // Delete Handler
+        row.querySelector('.btn-delete').onclick = () => row.remove();
+
+        container.appendChild(row);
+    }
+
+    commitSpellSlots() {
+        const container = document.getElementById('slotRowsContainer');
+        const rows = container.querySelectorAll('.flex-row');
+        const newConfig = {};
+
+        rows.forEach(row => {
+            const lvl = row.querySelector('.slot-level-select').value;
+            const count = row.querySelector('.slot-count-input').value;
+            
+            if (parseInt(count) > 0) {
+                newConfig[lvl] = parseInt(count);
+            }
+        });
+
+        this.state.updateSpellSlots(newConfig);
+        document.getElementById('spellSlotsDialog').close();
+    }
+
     // --- INTERNAL HELPERS ---
     _setupDialog(mode, isEditing) {
         document.getElementById('actModalTitle').innerText = isEditing ? `Edit ${mode}` : `Add ${mode}`;

@@ -36,3 +36,19 @@
         </button>
     </div>
 </dialog>
+
+<dialog id="spellSlotsDialog" style="width: 350px;">
+    <h3 class="text-purple mb-15">Manage Spell Slots</h3>
+    
+    <div id="slotRowsContainer" class="grid-gap-10 mb-15" style="max-height: 400px; overflow-y: auto;">
+        </div>
+
+    <button onclick="window.app.modals.addSlotRow()" class="btn" style="width:100%; border:1px dashed #555; color:#888; margin-bottom:15px;">
+        + Add Slot Level
+    </button>
+
+    <div class="flex-end">
+        <button onclick="document.getElementById('spellSlotsDialog').close()" class="btn btn-cancel">Cancel</button>
+        <button onclick="window.app.modals.commitSpellSlots()" class="btn btn-primary bg-purple">Save Configuration</button>
+    </div>
+</dialog>

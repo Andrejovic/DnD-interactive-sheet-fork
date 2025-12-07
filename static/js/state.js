@@ -57,6 +57,26 @@ export class CharacterState {
         this.save();
     }
 
+    updateSpellSlots(newSlotsConfig) {        
+        if (!this.data.spell_info) this.data.spell_info = {};
+        const currentSlots = this.data.spell_info.slots || {};
+        const resultSlots = {};
+
+        for (const [lvl, total] of Object.entries(newSlotsConfig)) {
+            const oldData = currentSlots[lvl] || { used: 0 };
+            // Ensure used doesn't exceed new total
+            const safeUsed = Math.min(oldData.used, total);
+            
+            resultSlots[lvl] = {
+                total: parseInt(total),
+                used: safeUsed
+            };
+        }
+
+        this.data.spell_info.slots = resultSlots;
+        this.save();
+    }
+
     toggleSpellSlot(level, index) {
         if (!this.data.spell_info?.slots) return;
         const slotData = this.data.spell_info.slots[level];

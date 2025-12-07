@@ -67,8 +67,8 @@
         },
         {
             "name": "Alien rifle",
-            "source": null,
             "notes": "pokus",
+            "source": null,
             "type": "item"
         },
         {
@@ -146,24 +146,8 @@
     "spell_info": {
         "ability": "cha",
         "slots": {
-            "1": {
-                "total": 0,
-                "used": 0
-            },
-            "2": {
-                "total": 0,
-                "used": 0
-            },
-            "3": {
-                "total": 0,
-                "used": 0
-            },
             "4": {
                 "total": 2,
-                "used": 0
-            },
-            "5": {
-                "total": 0,
                 "used": 0
             }
         }
@@ -490,15 +474,15 @@
             "type": "weapon_melee"
         },
         {
-            "name": "Sickle Slash",
-            "source": "Sickle",
-            "notes": "",
-            "type": "weapon_melee",
-            "stat": "str",
-            "range": "Melee",
-            "damage": "1d4 Slashing",
             "action": "Action",
-            "proficient": false
+            "damage": "1d4 Slashing",
+            "name": "Sickle Slash",
+            "notes": "",
+            "proficient": false,
+            "range": "Melee",
+            "source": "Sickle",
+            "stat": "str",
+            "type": "weapon_melee"
         },
         {
             "action": "Action",

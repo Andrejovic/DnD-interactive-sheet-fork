@@ -18,4 +18,5 @@ export class Utils {
         }
         return tmpl.content.cloneNode(true);
     }
+
 }

@@ -41,6 +41,7 @@
         },
         {
             "name": "Worm Hole",
+            "source": null,
             "notes": "You can step into the hidden paths created by the void. You can teleport up to 25 feet to an unoccupied space that you can see as a bonus action. Once you use this trait, you can't use it again until you finish a short or long rest."
         },
         {
@@ -115,6 +116,11 @@
             "desc": "When bonding via Awakened Mind, force target to make WIS save. Fail: It has Disadvantage attacking you; you have Advantage attacking it for bond duration. Recharge: Short/Long Rest or expend Pact Slot (no action).",
             "name": "Clairvoyant Combatant"
         }
+    ],
+    "languages": [
+        "Deep speech",
+        "Egyptian",
+        "Common"
     ],
     "level": 8,
     "magic_bonus": 1,
@@ -495,10 +501,5 @@
             "stat": "dex",
             "type": "weapon_range"
         }
-    ],
-    "languages": [
-        "Deep speech",
-        "Egyptian",
-        "Common"
     ]
 }

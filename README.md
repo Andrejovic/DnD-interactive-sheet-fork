@@ -51,7 +51,7 @@ python app.py
 
 ## 📦 Standalone Executable
 
-*Planned Feature*: A build process will be added to compile this project into a standalone `.exe` file. Future releases will include this executable in the `dist/` or `build/` directory, allowing you to run the sheet without installing Python.
+*Future plan* A build process will be added to compile this project into a standalone `.exe` file. Future releases will include this executable in the `dist/` directory, allowing you to run the sheet without installing Python.
 
 ## 📂 Project Structure
 

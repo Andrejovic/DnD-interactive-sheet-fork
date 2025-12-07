@@ -1,4 +1,4 @@
-import webview  # <--- NEW IMPORT
+import webview
 from flask import Flask, render_template, request, jsonify
 import json
 import math
@@ -9,7 +9,6 @@ import sys
 app = Flask(__name__)
 DATA_FILE = 'character.json'
 
-# --- RULES CONSTANTS ---
 SKILL_MAP = {
     'str': ['athletics'],
     'dex': ['acrobatics', 'sleight_of_hand', 'stealth'],
@@ -32,19 +31,16 @@ def save_data(data):
 def calculate_sheet(data):
     """Enriches the raw JSON with calculated modifiers and bonuses."""
     
-    # 1. Calculate Proficiency Bonus (PB) based on Level
     lvl = data.get('level', 1)
     pb = math.ceil(lvl / 4) + 1
     data['derived_pb'] = pb
 
-    # 2. Calculate Attribute Modifiers
     stats = data.get('stats', {})
     modifiers = {}
     for stat, score in stats.items():
         modifiers[stat] = (score - 10) // 2
     data['derived_modifiers'] = modifiers
 
-    # 3. Calculate Skill Bonuses
     skills_output = {}
     raw_skills = data.get('skills', {})
     
@@ -124,10 +120,7 @@ def check_wikidot():
         print(f"Check failed: {e}")
         return jsonify({'exists': False})
 
-# --- MODIFIED STARTUP LOGIC ---
 if __name__ == '__main__':
-    # We create the window object
-    # We pass 'app' (the Flask object) as the URL. Pywebview handles the port.
     window = webview.create_window(
         "D&D Character Sheet", 
         app,
@@ -136,7 +129,4 @@ if __name__ == '__main__':
         resizable=True
     )
 
-    # We start the GUI. 
-    # This blocks the code here until the window is closed.
-    # Once closed, it automatically kills the Flask server and exits.
-    webview.start(debug=True)
+    webview.start()

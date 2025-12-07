@@ -8,3 +8,4 @@ As*
 pyvenv.cfg
 *.spec
 dist
+character.json

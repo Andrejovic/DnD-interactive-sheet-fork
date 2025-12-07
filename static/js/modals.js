@@ -17,6 +17,12 @@ export class ModalHandler {
 
     openEdit(index, category) {
         this.editingIndex = index;
+
+        if (category === 'feat') {
+            this.editingType = 'feat';
+            this._openEditFeat(index);
+            return;
+        }
         this.editingType = (category === 'inventory') ? 'item' : category;
         
         this._setupDialog(this.editingType, true);
@@ -49,10 +55,37 @@ export class ModalHandler {
 
     // --- FEAT DIALOG ---
     openAddFeat() {
-        this.editingIndex = null; // Reuse this var or create editingFeatIndex
+        this.editingIndex = null;
+        this.editingType = 'feat';
+        
         document.getElementById('newFeatName').value = '';
         document.getElementById('newFeatNotes').value = '';
         this._populateSourceSelect('newFeatSource');
+        
+        // Update Title/Button for "Add" mode
+        const title = document.querySelector('#addFeatDialog h3');
+        if(title) title.innerText = "Add New Feat";
+        const btn = document.getElementById('featSubmitBtn');
+        if(btn) btn.innerText = "Add";
+
+        document.getElementById('addFeatDialog').showModal();
+    }
+
+    _openEditFeat(index) {
+        const feat = this.state.data.feats[index];
+        
+        document.getElementById('newFeatName').value = feat.name;
+        document.getElementById('newFeatNotes').value = feat.notes || '';
+        
+        this._populateSourceSelect('newFeatSource');
+        document.getElementById('newFeatSource').value = feat.source || '';
+
+        // Update Title/Button for "Edit" mode
+        const title = document.querySelector('#addFeatDialog h3');
+        if(title) title.innerText = "Edit Feat";
+        const btn = document.getElementById('featSubmitBtn');
+        if(btn) btn.innerText = "Save Changes";
+
         document.getElementById('addFeatDialog').showModal();
     }
 
@@ -64,7 +97,7 @@ export class ModalHandler {
             source: document.getElementById('newFeatSource').value || null,
             notes: document.getElementById('newFeatNotes').value || ""
         };
-        this.state.addOrUpdateEntry('feats', obj, null); // Feats only supports Add in this refactor version
+        this.state.addOrUpdateEntry('feats', obj, this.editingIndex);
         document.getElementById('addFeatDialog').close();
     }
     
